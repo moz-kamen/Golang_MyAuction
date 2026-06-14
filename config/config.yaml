@@ -1,0 +1,8 @@
+server:
+  port: ":8080"
+
+eth_client:
+  rpc_url: "http://127.0.0.1:8545"
+  websocket_url: "ws://127.0.0.1:8545"
+  timeout: 10
+  auction_address: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9"
