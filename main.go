@@ -40,6 +40,15 @@ func main() {
 			block.GET("/:blockHash/transactions", transactionController.Transactions)
 			block.GET("/transactions/:transactionHash", transactionController.TransactionByHash)
 		}
+
+		auction := v.Group("/auctions")
+		{
+			auctionController := controller.NewAuctionController(config)
+
+			// 拍卖接口
+			auction.GET("/:auctionId", auctionController.SelectById)
+			auction.GET("/:auctionId/logs", auctionController.SelectLogListById)
+		}
 	}
 
 	srv := &http.Server{
